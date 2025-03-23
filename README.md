@@ -55,8 +55,8 @@ The console output for monitoring is `stderr` (`stdout` is used for the forwardi
 
 You could also create systemctl or init service if you wish to start it automatically after system boot.
 
-[!NOTE]
-The scripts were written in an agile way, almost no missing data handling. It's not an official product, just a code for personal use I love to share with fellow hams who have similiar need like I had.
+> [!NOTE]
+> The scripts were written in an agile way, almost no missing data handling. It's not an official product, just a code for personal use I love to share with fellow hams who have similiar need like I had.
 
 ## Credits
 

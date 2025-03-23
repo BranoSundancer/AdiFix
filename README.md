@@ -36,12 +36,12 @@ mv -v dxcc.json cty.dat /usr/local/share/dxcc/
 
 **Create a config file** named with your callsign, for example `AB1CDE` with following content:
 ```bash
-# QRZ username and password
+# QRZ.com username and password
 QRZ_USER=AB1CDE
 QRZ_PASS=MyQRZpa$$word
-# listening port (UDP)
+# listening port (UDP), you should set your WSJT-X ADIF broadcast to your machine and this port
 ADIFIX_LISTEN=5333
-# forwarning IP:port (UDP)
+# forwarning IP:port (UDP), final IP for ADIF UDP delivery
 ADIFIX_FORWARD=1.2.3.4:5333
 ```
 

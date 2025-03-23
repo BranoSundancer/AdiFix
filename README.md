@@ -6,12 +6,16 @@ When sending ADIF QSOs via UDP from WSJT-X to my favorite logger I learned there
 
 ## Prerequisites
 
-Linux with:
-* wget
-* socat
-* bash
+* Linux with:
+  * wget
+  * socat
+  * bash
 
-QRZ.com registration is required. Paid subcription is not needed, however number of queries is limited per day. One QSO takes 1-3 QRZ queries.
+* dxcc perl script + recent cty.dat. Useful for real country especially for special callsigns.
+
+* QRZ.com registration. Paid subcription is not needed, however number of queries is limited per day. One QSO takes 1-3 QRZ queries. Useful for callsign name.
+
+* Official AARL DXCC list in JSON format. Usefull for DXCC to country translation (CTY.dat and QRZ.com **do not** report proper AARL country names for DXCC 291 or 54).
 
 ## Install
 
@@ -25,8 +29,7 @@ unzip bigcty-20250312.zip cty.dat
 
 # with sudo
 mkdir /usr/local/share/dxcc/
-mv -v dxcc.json /usr/local/share/dxcc/
-mv -v cty.dat /usr/local/share/dxcc/
+mv -v dxcc.json cty.dat /usr/local/share/dxcc/
 ```
 
 ## Config

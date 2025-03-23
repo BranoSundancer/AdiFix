@@ -34,7 +34,7 @@ mv -v dxcc.json cty.dat /usr/local/share/dxcc/
 
 ## Config
 
-Create a file named with your callsign, for example `AB1CDE` with following content:
+Create a config file named with your callsign, for example `AB1CDE` with following content:
 ```bash
 # QRZ username and password
 QRZ_USER=AB1CDE
@@ -47,8 +47,10 @@ ADIFIX_FORWARD=1.2.3.4:5333
 
 ## Run
 
+Run the server script with config file as the first parameter:
 ```bash
-./adifix_server.sh
+./adifix_server.sh AB1CDE
 ```
+The console output for monitoring is `stderr` (`stdout` is used for the forwarding itself). When UDP packet with QSO is received, you will see the UTC of the reception and in few seconds `values of interest` (callsign, name, country, dxcc) are displayed.
 
 You could also create systemctl or init service if you wish.

@@ -54,3 +54,8 @@ Run the server script with **config file as a parameter**:
 The console output for monitoring is `stderr` (`stdout` is used for the forwarding itself). When UDP packet with QSO is received, you will see the UTC of the reception and in few seconds CALLSIGN and resolved values for NAME, COUNTRY and DXCC are displayed. If the QSO already contained those values, they are **never** modified.
 
 You could also create systemctl or init service if you wish.
+
+## Credits
+
+* [Stu Green](https://www.youtube.com/@G5STU) G5STU who created and outstanding ham radio logger [Station Master](https://stationmasterpro.com/) for desktop, cloud and mobile operation
+* [OM3KFF](https://om3kff.sk/) ham club members for continuous support

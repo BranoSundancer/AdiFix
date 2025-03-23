@@ -7,15 +7,15 @@ When sending ADIF QSOs via UDP from WSJT-X to my favorite logger I learned there
 ## Prerequisites
 
 * Linux with:
-  * wget
-  * socat
+  * wget - only for download of external data, you can use curl instead
+  * socat - for the UDP handling (nc/netcat had some issues)
   * bash
 
-* dxcc perl script + recent cty.dat. Useful for real country especially for special callsigns.
+* **dxcc** perl script + recent cty.dat. Useful for real country especially for special callsigns.
 
-* QRZ.com registration. Paid subcription is not needed, however number of queries is limited per day. One QSO takes 1-3 QRZ queries. Useful for callsign name.
+* **QRZ.com registration** - paid **subcription is not needed** for basic XMLRPC queries, however number of queries is limited per day. One QSO takes 1-3 QRZ queries. Useful for callsign name.
 
-* Official AARL DXCC list in JSON format. Useful for DXCC to country translation (CTY.dat and QRZ.com **do not** report proper AARL country names for DXCC 291 or 54).
+* Official **AARL DXCC list** in JSON format. Useful for DXCC to country translation (CTY.dat and QRZ.com **do not** report proper AARL country names for DXCC 291 or 54).
 
 ## Install
 
@@ -34,7 +34,7 @@ mv -v dxcc.json cty.dat /usr/local/share/dxcc/
 
 ## Config
 
-Create a config file named with your callsign, for example `AB1CDE` with following content:
+Create a **config file** named with your callsign, for example `AB1CDE` with following content:
 ```bash
 # QRZ username and password
 QRZ_USER=AB1CDE
@@ -47,10 +47,10 @@ ADIFIX_FORWARD=1.2.3.4:5333
 
 ## Run
 
-Run the server script with config file as the first parameter:
+Run the server script with **config file as a parameter**:
 ```bash
 ./adifix_server.sh AB1CDE
 ```
-The console output for monitoring is `stderr` (`stdout` is used for the forwarding itself). When UDP packet with QSO is received, you will see the UTC of the reception and in few seconds `values of interest` (callsign, name, country, dxcc) are displayed.
+The console output for monitoring is `stderr` (`stdout` is used for the forwarding itself). When UDP packet with QSO is received, you will see the UTC of the reception and in few seconds CALLSIGN and resolved values for NAME, COUNTRY and DXCC are displayed. If the QSO already contained those values, they are **never** modified.
 
 You could also create systemctl or init service if you wish.

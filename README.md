@@ -15,7 +15,7 @@ When sending ADIF QSOs via UDP from WSJT-X to my favorite logger I learned there
 
 * QRZ.com registration. Paid subcription is not needed, however number of queries is limited per day. One QSO takes 1-3 QRZ queries. Useful for callsign name.
 
-* Official AARL DXCC list in JSON format. Usefull for DXCC to country translation (CTY.dat and QRZ.com **do not** report proper AARL country names for DXCC 291 or 54).
+* Official AARL DXCC list in JSON format. Useful for DXCC to country translation (CTY.dat and QRZ.com **do not** report proper AARL country names for DXCC 291 or 54).
 
 ## Install
 

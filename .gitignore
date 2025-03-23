@@ -1,0 +1,7 @@
+OM1ATB
+*.log
+*.bak
+# Ignore vim files:
+*~
+*.swp
+*.swo

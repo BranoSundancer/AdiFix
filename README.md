@@ -2,7 +2,7 @@
 
 ## Use Case
 
-When sending ADIF QSOs via UDP from WSJT-X to my favorite logger I learned there is no DXCC/COUNTRY/NAME value. Manual editing was a pain, so I created a proxy.
+When sending ADIF QSOs via UDP from WSJT-X to my favorite logger I learned there is no DXCC/COUNTRY/NAME value. Manual editing was a pain, so I created a proxy which resolves and adds missing data from various sources and send it to the final logger.
 
 ## Prerequisites
 

@@ -2,7 +2,7 @@
 
 ## Use Case
 
-When sending ADIF QSOs via UDP from WSJT-X to my favorite logger I learned there is no DXXCC/COUNTRY/NAME value. Manual editing was a pain, so I created a proxy.
+When sending ADIF QSOs via UDP from WSJT-X to my favorite logger I learned there is no DXCC/COUNTRY/NAME value. Manual editing was a pain, so I created a proxy.
 
 ## Prerequisites
 
@@ -11,11 +11,11 @@ When sending ADIF QSOs via UDP from WSJT-X to my favorite logger I learned there
   * socat - for the UDP handling (nc/netcat had some issues)
   * bash
 
-* **dxcc** perl script + recent cty.dat. Useful for real country especially for special callsigns.
+* **dxcc** perl script + recent cty.dat. Useful for real country mainly for special callsigns.
 
-* **QRZ.com registration** - paid **subcription is not needed** for basic XMLRPC queries, however number of queries is limited per day. One QSO takes 1-3 QRZ queries. Useful for callsign name.
+* **QRZ.com registration** - paid **subcription is not needed** for basic XMLRPC queries, however number of queries is limited per day. One QSO takes 1-3 QRZ queries. Useful for callsign name and basic country resolving.
 
-* Official **AARL DXCC list** in JSON format. Useful for DXCC to country translation (CTY.dat and QRZ.com **do not** report proper AARL country names for DXCC 291 or 54).
+* Official **AARL DXCC list** in JSON format. Useful for DXCC to country translation (CTY.DAT and QRZ.com **do not** report proper AARL country names for example for DXCC 291 or 54).
 
 ## Install
 
@@ -34,7 +34,7 @@ mv -v dxcc.json cty.dat /usr/local/share/dxcc/
 
 ## Config
 
-Create a **config file** named with your callsign, for example `AB1CDE` with following content:
+**Create a config file** named with your callsign, for example `AB1CDE` with following content:
 ```bash
 # QRZ username and password
 QRZ_USER=AB1CDE
@@ -51,11 +51,14 @@ Run the server script with **config file as a parameter**:
 ```bash
 ./adifix_server.sh AB1CDE
 ```
-The console output for monitoring is `stderr` (`stdout` is used for the forwarding itself). When UDP packet with QSO is received, you will see the UTC of the reception and in few seconds CALLSIGN and resolved values for NAME, COUNTRY and DXCC are displayed. If the QSO already contained those values, they are **never** modified.
+The console output for monitoring is `stderr` (`stdout` is used for the forwarding itself). When UDP packet with QSO is received, you will see the UTC of its reception and in few seconds CALLSIGN and resolved values for NAME, COUNTRY and DXCC are displayed. If the QSO already contained those values, they are **never** modified.
 
-You could also create systemctl or init service if you wish.
+You could also create systemctl or init service if you wish to start it automatically after system boot.
+
+[!NOTE]
+The scripts were written in an agile way, almost no missing data handling. It's not an official product, just a code for personal use I love to share with fellow hams who have similiar need like I had.
 
 ## Credits
 
-* [Stu Green](https://www.youtube.com/@G5STU) G5STU who created and outstanding ham radio logger [Station Master](https://stationmasterpro.com/) for desktop, cloud and mobile operation
+* [Stu Green](https://www.youtube.com/@G5STU) G5STU who created an outstanding ham radio logger [Station Master](https://stationmasterpro.com/) for desktop, cloud and mobile operation
 * [OM3KFF](https://om3kff.sk/) ham club members for continuous support

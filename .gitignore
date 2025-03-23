@@ -1,4 +1,8 @@
 OM1ATB
+dxcc.json
+dxcc
+*.zip
+cty.dat
 *.log
 *.bak
 # Ignore vim files:

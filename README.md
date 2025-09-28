@@ -2,7 +2,7 @@
 
 ## Use Case
 
-When sending ADIF QSOs via UDP from WSJT-X to my favorite logger I learned there is no DXCC/COUNTRY/NAME value. Manual editing was a pain, so I created a proxy which resolves and adds missing data from various sources and send it to the final logger.
+When sending ADIF QSOs via UDP from WSJT to my favorite logger I learned there is no DXCC/COUNTRY/NAME value. Manual editing was a pain, so I created a proxy which resolves and adds missing data from various sources and send it to the final logger.
 
 ## Prerequisites
 
@@ -39,7 +39,7 @@ mv -v dxcc.json cty.dat /usr/local/share/dxcc/
 # QRZ.com username and password
 QRZ_USER=AB1CDE
 QRZ_PASS=MyQRZpa$$word
-# listening port (UDP), you should set your WSJT-X ADIF broadcast to your machine and this port
+# listening port (UDP), you should set your WSJT ADIF broadcast to your machine and this port
 ADIFIX_LISTEN=5333
 # forwarning IP:port (UDP), final IP for ADIF UDP delivery
 ADIFIX_FORWARD=1.2.3.4:5333

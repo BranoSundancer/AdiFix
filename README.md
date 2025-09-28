@@ -53,7 +53,7 @@ Run the server script with **config file as a parameter**:
 ```
 The console output for monitoring is `stderr` (`stdout` is used for the forwarding itself). When UDP packet with QSO is received, you will see the UTC of its reception and in few seconds CALLSIGN and resolved values for NAME, COUNTRY and DXCC are displayed. If the QSO already contained those values, they are **never** modified.
 
-You could also create systemctl or init service if you wish to start it automatically after system boot.
+You could also create **systemd** or **SysVinit** service if you wish to start it automatically after system boot.
 
 > [!NOTE]
 > The scripts were written in an agile way, almost no missing data handling. It's not an official product, just a code for personal use I love to share with fellow hams who have similiar need like I had.
